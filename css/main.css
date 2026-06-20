@@ -354,8 +354,6 @@
       .comparison-table td.ours {
         color: var(--accent-sunset);
         background: none;
-        padding-top: var(--space-xs);
-        border-top: 1px solid var(--hairline);
-        margin-top: var(--space-xs);
+        padding-top: var(--space-md);
       }
     }
