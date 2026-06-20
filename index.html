@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Evaluations</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="assets/chart.umd.min.js"></script>
+
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+  <nav class="nav-bar">
+    <div class="nav-brand">BUSINESS EVALUATIONS REPORT • JUNE 2026</div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-band">
+    <div class="container">
+      <div class="hero-title">Business Evaluations.</div>
+      <div class="body-md" style="max-width:620px; margin-top: var(--space-lg); color:var(--body);">
+        13 experts. 9 days. 37 robust evaluations targeting the real economy that AI still ignores.
+      </div>
+    </div>
+  </div>
+
+  <!-- EXEC STATS -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Executive Summary</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value" style="color:#ff7a17;">32%</div>
+          <div class="stat-label">Grok 4.3 avg score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">54%</div>
+          <div class="stat-label">Opus 4.7 avg score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">296</div>
+          <div class="stat-label">Rules failed by Grok</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">37</div>
+          <div class="stat-label">Robust evals created</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">13</div>
+          <div class="stat-label">Expert authors</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Unique topic areas</div>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-xl); font-size:14px; color:var(--body-mid);">
+        Created by 13 highly dedicated experts in only 9 days. 296 rules that were failed by Grok (average 9.9 failed rules per task).
+      </div>
+
+      <div style="margin-top: var(--space-2xl);">
+        <div style="margin-bottom: var(--space-2xl);">
+          <div class="caption-mono" style="margin-bottom: var(--space-sm);">Model Performance</div>
+          <div class="chart-wrapper model">
+            <canvas id="scoresChart"></canvas>
+          </div>
+        </div>
+        <div>
+          <div class="caption-mono" style="margin-bottom: var(--space-sm);">Small Business Coverage</div>
+          <div class="chart-wrapper coverage">
+            <canvas id="coverageChart"></canvas>
+          </div>
+          <div style="font-size: 11px; color: var(--body-mid); margin-top: var(--space-xs);">88% of US small businesses covered by our 12-domain taxonomy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- DOMAINS -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Diversity & Versatility</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Twelve functional domains</div>
+      <div class="body-md" style="max-width:620px; color:var(--body); margin-bottom: var(--space-xl);">
+        Tasks target commonly forgotten topics across the small-business economy. Time horizons from hours to 6 weeks.
+      </div>
+
+      <div class="domain-grid" id="domain-grid"></div>
+
+      <div style="margin-top: var(--space-xl);">
+        <div class="caption-mono" style="margin-bottom: var(--space-sm);">Errors Discovered per Domain</div>
+        <div class="chart-wrapper domain">
+          <canvas id="domainFailuresChart"></canvas>
+        </div>
+        <div style="font-size: 11px; color: var(--body-mid); margin-top: var(--space-xs);">Higher bars indicate more individual rules failed by Grok in evaluations for that domain</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- COMPETITIVE -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Competitive Review</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Why this eval set is different</div>
+
+      <div class="body-md" style="max-width: 720px; color: var(--body); margin-bottom: var(--space-lg);">
+        Most evaluations target narrow slices: four elite corporate jobs, nine large-industry sectors, or synthetic app simulations. Business Evals is the only one built on real small-business work across the economy that actually employs most people.
+      </div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Apex (Mercor)</th>
+            <th>Apex Agents (Mercor)</th>
+            <th>GDPval (OpenAI)</th>
+            <th>AutomationBench (Zapier)</th>
+            <th class="ours">Business Evals</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="factor">Metric</td>
+            <td data-label="Apex (Mercor)">Single-turn economically valuable work</td>
+            <td data-label="Apex Agents (Mercor)">Long-term economically valuable work</td>
+            <td data-label="GDPval (OpenAI)">Real-world economically valuable tasks</td>
+            <td data-label="AutomationBench (Zapier)">Agentic cross-app task completion</td>
+            <td data-label="Business Evals" class="ours">Robust, diverse tasks overlooked by others</td>
+          </tr>
+          <tr>
+            <td class="factor">Coverage</td>
+            <td data-label="Apex (Mercor)">Elite 4 jobs (IB, consulting, law, MD)</td>
+            <td data-label="Apex Agents (Mercor)">Elite 4 jobs (same)</td>
+            <td data-label="GDPval (OpenAI)">44 occupations, 9 industries</td>
+            <td data-label="AutomationBench (Zapier)">6 domains, 47 simulated apps</td>
+            <td data-label="Business Evals" class="ours">88% of US small businesses (12 domains)</td>
+          </tr>
+          <tr>
+            <td class="factor">Source</td>
+            <td data-label="Apex (Mercor)">Authors’ day-to-day work</td>
+            <td data-label="Apex Agents (Mercor)">Tasks set in simulated world</td>
+            <td data-label="GDPval (OpenAI)">Real work products</td>
+            <td data-label="AutomationBench (Zapier)">Synthetically created tasks</td>
+            <td data-label="Business Evals" class="ours">Real small businesses (untapped)</td>
+          </tr>
+          <tr>
+            <td class="factor">Authors</td>
+            <td data-label="Apex (Mercor)">Experts from each field</td>
+            <td data-label="Apex Agents (Mercor)">Experts from each field</td>
+            <td data-label="GDPval (OpenAI)">Experts from each field</td>
+            <td data-label="AutomationBench (Zapier)">AI generated</td>
+            <td data-label="Business Evals" class="ours">Directors/MDs/VPs, avg 14 yrs + 5 review rounds</td>
+          </tr>
+          <tr>
+            <td class="factor">Difficulty</td>
+            <td data-label="Apex (Mercor)">Top models 65–77%</td>
+            <td data-label="Apex Agents (Mercor)">Top models ~44%</td>
+            <td data-label="GDPval (OpenAI)">Best model ≥ experts</td>
+            <td data-label="AutomationBench (Zapier)">Other models &lt;10%</td>
+            <td data-label="Business Evals" class="ours">Hard by design — Grok ≤50%, Claude ≤60%</td>
+          </tr>
+          <tr>
+            <td class="factor">Deliverables</td>
+            <td data-label="Apex (Mercor)">Single-turn prompt + source docs</td>
+            <td data-label="Apex Agents (Mercor)">Long-term task, short message result</td>
+            <td data-label="GDPval (OpenAI)">Single-turn, multi-format</td>
+            <td data-label="AutomationBench (Zapier)">Single prompt, app final state only</td>
+            <td data-label="Business Evals" class="ours">Multi-file (.xlsx + .pptx + .docx) real outputs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- TEAM & RIGOR -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Quality & Rigor</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Multiple independent reviews by practitioners</div>
+      <div class="body-md" style="max-width:620px; color:var(--body); margin-bottom: var(--space-xl);">
+        Each task starts with an author (L0) who has done that job or has experience in the field. From there, the task goes through multiple independent reviews. L1 reviews it first, then L2, with a third reviewer adding a final check.
+      </div>
+
+      <div class="roster" id="roster-grid"></div>
+    </div>
+  </div>
+
+  <script src="assets/chart.umd.min.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/charts.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
