@@ -40,7 +40,7 @@ const teamImages = {
   "Daniel Gordiychuk": "assets/danielG.jpeg",
   "Charles Ha": "assets/charles.jpeg",
   "Chan Park": "assets/chan.jpeg",
-  "Matias Goya": "assets/matti.jpeg",
+  "Matias Goya": "assets/matias.jpeg",
   "Juan José Torregiani": "assets/juan.png",
   "Josh Giles": "assets/josh.png"
 };
