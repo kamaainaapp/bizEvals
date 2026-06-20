@@ -69,7 +69,7 @@ function createCoverageChart() {
   const chart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['US Small Business Coverage'],
+      labels: ['88%'],
       datasets: [{
         data: [88],
         backgroundColor: '#ff7a17',
