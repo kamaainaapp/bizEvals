@@ -3,74 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Evaluations</title>
+  <title>SMBval: Business Evaluations</title>
   <link rel="stylesheet" href="css/main.css">
-  <script src="assets/chart.umd.min.js"></script>
-
 </head>
 <body>
   <div class="bg-layer" aria-hidden="true"></div>
   <nav class="nav-bar">
-    <div class="nav-brand">BUSINESS EVALUATIONS REPORT • JUNE 2026</div>
+    <div class="nav-brand">SMBval • Business Evaluations</div>
   </nav>
 
   <!-- HERO -->
   <div class="hero-band">
     <div class="container">
-      <div class="hero-title">Business Evaluations.</div>
-      <div class="body-md" style="max-width:620px; margin-top: var(--space-lg); color:var(--body);">
-        that AI still ignores.
+      <div class="hero-title">SMBval.</div>
+      <div class="body-md" style="max-width:640px; margin-top: var(--space-lg); color:var(--body);">
+        A hybrid benchmark for small and medium business work: expert-authored tasks, multi-app agents, and grading that mixes automatic checks with human judgment.
       </div>
     </div>
   </div>
 
-  <!-- EXEC STATS -->
+  <!-- WHY / STATS (methodology, not fake leaderboard) -->
   <div class="content-band">
     <div class="container">
-      <div class="caption-mono">Executive Summary</div>
+      <div class="caption-mono">What SMBval is</div>
       <div class="stat-grid">
         <div class="stat-card">
-          <div class="stat-value" style="color:#ff7a17;">32%</div>
-          <div class="stat-label">Grok 4.3 avg score</div>
+          <div class="stat-value" style="color:#ff7a17; font-size:22px; line-height:28px;">Expert-authored</div>
+          <div class="stat-label">Domain experts design tasks from real SMB work (GDPval-style judgment)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">54%</div>
-          <div class="stat-label">Opus 4.7 avg score</div>
+          <div class="stat-value" style="font-size:22px; line-height:28px;">Multi-app</div>
+          <div class="stat-label">Iterative work across email, spreadsheets, CRM, chat, not one-shot files</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">296</div>
-          <div class="stat-label">Rules failed by Grok</div>
+          <div class="stat-value" style="font-size:22px; line-height:28px;">Auto + human</div>
+          <div class="stat-label">Assertions on final system state, plus review of business reasoning</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">37</div>
-          <div class="stat-label">Robust evals created</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">13</div>
-          <div class="stat-label">Expert authors</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value">12</div>
-          <div class="stat-label">Unique topic areas</div>
-        </div>
-      </div>
-      <div style="margin-top: var(--space-xl); font-size:14px; color:var(--body-mid);">
-        Created by 13 highly dedicated experts in only 9 days. 296 rules that were failed by Grok (average 9.9 failed rules per task).
-      </div>
-
-      <div style="margin-top: var(--space-2xl);">
-        <div style="margin-bottom: var(--space-2xl);">
-          <div class="caption-mono" style="margin-bottom: var(--space-sm);">Model Performance</div>
-          <div class="chart-wrapper model">
-            <canvas id="scoresChart"></canvas>
-          </div>
-        </div>
-        <div>
-          <div class="caption-mono" style="margin-bottom: var(--space-sm);">Small Business Coverage</div>
-          <div class="chart-wrapper coverage">
-            <canvas id="coverageChart"></canvas>
-          </div>
-          <div style="font-size: 11px; color: var(--body-mid); margin-top: var(--space-xs);">88% of US small businesses covered by our 12-domain taxonomy</div>
+          <div class="stat-value" style="font-size:22px; line-height:28px;">Hybrid</div>
+          <div class="stat-label">Best of GDPval realism and AutomationBench-style agency</div>
         </div>
       </div>
     </div>
@@ -78,23 +49,134 @@
 
   <div class="divider-hairline"></div>
 
-  <!-- DOMAINS -->
+  <!-- PROBLEM -->
   <div class="content-band">
     <div class="container">
-      <div class="caption-mono">Diversity & Versatility</div>
-      <div class="display-md" style="margin-bottom: var(--space-xl);">Twelve functional domains</div>
-      <div class="body-md" style="max-width:620px; color:var(--body); margin-bottom: var(--space-xl);">
-        Our tasks target ignored workflows across the small-business economy. Time horizons from hours to 6 weeks.
+      <div class="caption-mono">The problem</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Benchmarks miss how SMBs actually work</div>
+      <div class="body-md" style="max-width:720px; color:var(--body); margin-bottom: var(--space-lg);">
+        Most existing AI benchmarks don’t match day-to-day small and medium business operations.
+      </div>
+      <div class="domain-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="domain-card" style="cursor:default;">
+          <div class="name">GDPval-style benchmarks</div>
+          <div class="horizon">One-shot deliverables</div>
+          <div class="body-sm" style="color:var(--body); margin-top: var(--space-md);">
+            Focus on producing a single file (report, spreadsheet). Real SMB work is iterative and spans multiple tools.
+          </div>
+        </div>
+        <div class="domain-card" style="cursor:default;">
+          <div class="name">Pure automation benches</div>
+          <div class="horizon">e.g. Zapier AutomationBench</div>
+          <div class="body-sm" style="color:var(--body); margin-top: var(--space-md);">
+            Strong on multi-app workflows and automatic grading, but task creation is often technical and less grounded in expert business judgment.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- HYBRID APPROACH -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">SMBval hybrid approach</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Combine the strengths of both</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-label" style="color:var(--accent-sunset); margin-bottom: var(--space-sm);">01. Experts create tasks</div>
+          <div class="body-sm" style="color:var(--body);">
+            SMB practitioners design realistic scenarios from actual work: the prompt, the messy starting situation, and what “done right” looks like.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label" style="color:var(--accent-sunset); margin-bottom: var(--space-sm);">02. Iterative & multi-app</div>
+          <div class="body-sm" style="color:var(--body);">
+            The model works across tools (email, spreadsheets, CRM, Slack, and more) over multiple steps, closer to real operators.
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label" style="color:var(--accent-sunset); margin-bottom: var(--space-sm);">03. Scalable grading</div>
+          <div class="body-sm" style="color:var(--body);">
+            Automatic assertions check final system state; experts review reasoning and judgment so scoring stays fair without endless manual rubrics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- HOW IT WORKS -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">How it works</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">From expert template to grade</div>
+
+      <div style="display:grid; gap: var(--space-2xl); max-width:800px;">
+        <div>
+          <div class="caption-mono-sm" style="color:var(--accent-sunset); margin-bottom: var(--space-sm);">Task creation</div>
+          <div class="body-md" style="color:var(--body); margin-bottom: var(--space-md);">
+            Domain experts (Finance, Operations, Sales, HR, and other areas) describe the situation in plain language. A technical teammate turns that into a runnable test. Experts fill in:
+          </div>
+          <ul class="body-md" style="color:var(--body); padding-left: 1.25rem; line-height: 1.7;">
+            <li>The prompt / goal</li>
+            <li>The messy starting situation (emails, policies, data across tools)</li>
+            <li>The golden final state: what systems should look like if everything was done correctly</li>
+            <li>Key judgment points they want to test</li>
+          </ul>
+        </div>
+        <div>
+          <div class="caption-mono-sm" style="color:var(--accent-sunset); margin-bottom: var(--space-sm);">Grading</div>
+          <div class="body-md" style="color:var(--body);">
+            <strong style="color:var(--ink);">Automatic checks (assertions)</strong> verify the final state of simulated tools (e.g. “Was this invoice logged with the exact amount?”), enabling partial credit and a strict pass/fail.
+            <strong style="color:var(--ink);">Human review of reasoning</strong> focuses expert time on business taste: conflicting policies, logical choices, evidence-based decisions, not every mechanical field.
+          </div>
+        </div>
       </div>
 
-      <div class="domain-grid" id="domain-grid"></div>
-
-      <div style="margin-top: var(--space-xl);">
-        <div class="caption-mono" style="margin-bottom: var(--space-sm);">Errors Discovered per Domain</div>
-        <div class="chart-wrapper domain">
-          <canvas id="domainFailuresChart"></canvas>
+      <div style="margin-top: var(--space-3xl); max-width:800px; padding: var(--space-xl); border: 1px solid var(--hairline); border-radius: var(--radius-sm); background: var(--canvas-card);">
+        <div class="caption-mono-sm" style="margin-bottom: var(--space-md);">Example: daily morning ops for a small café</div>
+        <div class="body-md" style="color:var(--body); margin-bottom: var(--space-md);">
+          A solopreneur or small restaurant owner where the agent must:
         </div>
-        <div style="font-size: 11px; color: var(--body-mid); margin-top: var(--space-xs);">Rules failed by Grok</div>
+        <ul class="body-sm" style="color:var(--body); padding-left: 1.25rem; line-height: 1.7;">
+          <li>Pull yesterday’s sales from POS and online ordering</li>
+          <li>Review data in Sheets alongside inventory</li>
+          <li>Check overnight customer reviews</li>
+          <li>Decide supplier reorders from trends and the coming weekend</li>
+          <li>Update inventory counts and reorder quantities</li>
+          <li>Place orders via email or portal</li>
+          <li>Send a team note (Slack or text) about 86’d items or promotions</li>
+        </ul>
+        <div class="body-sm" style="color:var(--body-mid); margin-top: var(--space-md);">
+          Real judgment on quantities, trends, and communication, while most scoring still comes from assertions on spreadsheets and messages.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Why this matters</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Built for how SMBs actually operate</div>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="body-sm" style="color:var(--body);">Real work is iterative and spans multiple tools</div>
+        </div>
+        <div class="stat-card">
+          <div class="body-sm" style="color:var(--body);">Tasks reflect judgment calls SMB teams make every day</div>
+        </div>
+        <div class="stat-card">
+          <div class="body-sm" style="color:var(--body);">Grading is fair, consistent, and does not require endless expert time</div>
+        </div>
+        <div class="stat-card">
+          <div class="body-sm" style="color:var(--body);">You get rich diagnostics, not just pass/fail</div>
+        </div>
       </div>
     </div>
   </div>
@@ -104,56 +186,51 @@
   <!-- COMPETITIVE -->
   <div class="content-band">
     <div class="container">
-      <div class="caption-mono">Competitive Review</div>
-      <div class="display-md" style="margin-bottom: var(--space-xl);">Why this eval set is different</div>
-
+      <div class="caption-mono">Competitive framing</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Where SMBval sits</div>
       <div class="body-md" style="max-width: 720px; color: var(--body); margin-bottom: var(--space-lg);">
-        Most evaluations target narrow slices: elite corporate jobs, large-industry sectors, or synthetic app simulations. Our Business Evals are the only one built on real small-business work.
+        SMBval combines GDPval-style expert task design with AutomationBench-style multi-app agency and automatic state checks, aimed at small and medium business work.
       </div>
 
       <table class="comparison-table">
         <thead>
           <tr>
             <th>Factor</th>
-            <th>Apex (Mercor)</th>
-            <th>Apex Agents (Mercor)</th>
             <th>GDPval (OpenAI)</th>
             <th>AutomationBench (Zapier)</th>
-            <th class="ours">Our Business Evals</th>
+            <th class="ours">SMBval</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="factor">Metric</td>
-            <td data-label="Apex (Mercor)">Single-turn economically valuable work</td>
-            <td data-label="Apex Agents (Mercor)">Long-term economically valuable work</td>
-            <td data-label="GDPval (OpenAI)">Real-world economically valuable tasks</td>
+            <td class="factor">Focus</td>
+            <td data-label="GDPval (OpenAI)">One-shot economically valuable deliverables</td>
             <td data-label="AutomationBench (Zapier)">Agentic cross-app task completion</td>
-            <td data-label="Our Business Evals" class="ours">Robust, diverse tasks overlooked by others</td>
+            <td data-label="SMBval" class="ours">Iterative SMB work across tools + expert judgment</td>
           </tr>
           <tr>
-            <td class="factor">Coverage</td>
-            <td data-label="Apex (Mercor)">Elite 4 jobs (IB, consulting, law, MD)</td>
-            <td data-label="Apex Agents (Mercor)">Elite 4 jobs (same)</td>
-            <td data-label="GDPval (OpenAI)">44 occupations, 9 industries</td>
-            <td data-label="AutomationBench (Zapier)">6 domains, 47 simulated apps</td>
-            <td data-label="Our Business Evals" class="ours">88% of US small businesses</td>
+            <td class="factor">Task source</td>
+            <td data-label="GDPval (OpenAI)">Real work products from experts</td>
+            <td data-label="AutomationBench (Zapier)">Technically structured / simulated apps</td>
+            <td data-label="SMBval" class="ours">SMB experts describe real scenarios; tech team implements</td>
           </tr>
           <tr>
-            <td class="factor">Source</td>
-            <td data-label="Apex (Mercor)">Authors’ day-to-day work</td>
-            <td data-label="Apex Agents (Mercor)">Tasks set in simulated world</td>
-            <td data-label="GDPval (OpenAI)">Real work products</td>
-            <td data-label="AutomationBench (Zapier)">Synthetically created tasks</td>
-            <td data-label="Our Business Evals" class="ours">Real data from small businesses</td>
+            <td class="factor">Interaction</td>
+            <td data-label="GDPval (OpenAI)">Single-turn file outputs</td>
+            <td data-label="AutomationBench (Zapier)">Multi-step, multi-app actions</td>
+            <td data-label="SMBval" class="ours">Multi-step, multi-app (email, sheets, CRM, chat, …)</td>
           </tr>
           <tr>
-            <td class="factor">Difficulty</td>
-            <td data-label="Apex (Mercor)">Top models 65–77%</td>
-            <td data-label="Apex Agents (Mercor)">Top models ~44%</td>
-            <td data-label="GDPval (OpenAI)">Best model ≥ experts</td>
-            <td data-label="AutomationBench (Zapier)">Other models &lt;10%</td>
-            <td data-label="Business Evals" class="ours">Hard by design — Grok ≤50%, Claude ≤60%</td>
+            <td class="factor">Grading</td>
+            <td data-label="GDPval (OpenAI)">Blind human ranking of deliverables</td>
+            <td data-label="AutomationBench (Zapier)">Automatic checks on final app state</td>
+            <td data-label="SMBval" class="ours">Assertions on final state + human review of reasoning</td>
+          </tr>
+          <tr>
+            <td class="factor">Strength for SMBs</td>
+            <td data-label="GDPval (OpenAI)">Realism of expert work products</td>
+            <td data-label="AutomationBench (Zapier)">Scalable, objective multi-tool scoring</td>
+            <td data-label="SMBval" class="ours">Both: grounded scenarios with scalable checks</td>
           </tr>
         </tbody>
       </table>
@@ -162,23 +239,36 @@
 
   <div class="divider-hairline"></div>
 
+  <!-- DOMAINS -->
+  <div class="content-band">
+    <div class="container">
+      <div class="caption-mono">Coverage</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">SMB functional areas</div>
+      <div class="body-md" style="max-width:620px; color:var(--body); margin-bottom: var(--space-xl);">
+        Experts author tasks across core SMB functions: messy starting states, multi-tool workflows, and the judgment calls operators face daily. Expand a card for tools and what we test.
+      </div>
+
+      <div class="domain-grid" id="domain-grid"></div>
+    </div>
+  </div>
+
+  <div class="divider-hairline"></div>
+
   <!-- TEAM & RIGOR -->
   <div class="content-band">
     <div class="container">
-      <div class="caption-mono">Quality & Rigor</div>
-      <div class="display-md" style="margin-bottom: var(--space-xl);">Multiple independent reviews by practitioners</div>
+      <div class="caption-mono">Quality & authorship</div>
+      <div class="display-md" style="margin-bottom: var(--space-xl);">Practitioners write the work; systems score the outcome</div>
       <div class="body-md" style="max-width:620px; color:var(--body); margin-bottom: var(--space-xl);">
-        Each task starts with an author (L0) who has done that job or has experience in the field. From there, the task goes through multiple independent reviews. L1 reviews it first, then L2, with a third reviewer adding a final check.
+        Domain experts fill a plain-language template: goal, starting mess, golden final state, and judgment points. Technical teammates implement the simulation and assertions. Automatic checks scale grading; humans focus on reasoning and business taste.
       </div>
 
       <div class="roster" id="roster-grid"></div>
     </div>
   </div>
 
-  <script src="assets/chart.umd.min.js"></script>
   <script src="js/data.js" defer></script>
   <script src="js/ui.js" defer></script>
-  <script src="js/charts.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

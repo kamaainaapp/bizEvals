@@ -1,17 +1,47 @@
-// Data extracted strictly from ● Knowledge Work Evals June 2026.md
+// Domain content aligned to SMBval overview + task-creation template (SMB functional areas).
 const domains = [
-  {name: "Administrative", workflows: "Executive operations, board prep, multi-zone scheduling, expense and policy admin, records and vendor management", deliverable: "Board package; executive calendar; procedural policy", horizon: "Hours to 1 wk", hKey: "hours"},
-  {name: "Customer Support & Success", workflows: "Escalation playbooks, QBR prep, churn and renewal analysis, support dashboards", deliverable: "QBR deck; churn analysis; escalation playbook", horizon: "Days to 2 wks", hKey: "days"},
-  {name: "Executive Leadership", workflows: "Strategy memos, OKR cascades, board pre-reads, capital allocation, org design, investor updates", deliverable: "Strategy memo; board pre-read; Objective and key results model", horizon: "1 to 4 wks", hKey: "weeks"},
-  {name: "Facilities & Real Estate", workflows: "Lease vs buy analysis, relocation and space planning, workplace strategy, facilities budgets, vendor RFPs", deliverable: "Lease vs buy model; space plan; facilities budget", horizon: "1 to 3 wks", hKey: "weeks"},
-  {name: "Human Resources & Talent", workflows: "Compensation banding, workforce planning, performance design, benefits modeling, org redesign", deliverable: "Comp band model; workforce plan", horizon: "1 to 4 wks", hKey: "weeks"},
-  {name: "Management Consulting", workflows: "Market-entry assessments, commercial due diligence, operating-model redesign, cost and growth strategy", deliverable: "Market-entry deck; due-diligence memo", horizon: "2 to 6 wks", hKey: "weeks"},
-  {name: "Marketing & Communications", workflows: "GTM plans, positioning, campaign calendars, media-mix modeling, crisis comms", deliverable: "GTM plan; CAC/LTV model; crisis-comms plan", horizon: "1 to 4 wks", hKey: "weeks"},
-  {name: "Operations", workflows: "Process mapping and redesign, S&OP, capacity planning, KPI dashboards, SLA design", deliverable: "Process map; ops review pack; capacity model", horizon: "1 to 3 wks", hKey: "weeks"},
-  {name: "Sales & Business Development", workflows: "Territory and quota design, comp plans, pipeline and forecast models, deal desk, partner programs", deliverable: "Territory/quota model; comp plan; partner case", horizon: "1 to 3 wks", hKey: "weeks"},
-  {name: "Supply Chain, Procurement & Logistics", workflows: "Sourcing RFPs and should-cost, network design, S&OP, inventory optimization, logistics modeling", deliverable: "RFP scoring model; network scenarios", horizon: "2 to 5 wks", hKey: "weeks"},
-  {name: "Entrepreneurship", workflows: "Business plans, fundraising decks and models, unit economics, pricing, GTM for new ventures", deliverable: "Deck + model + cap table; business plan", horizon: "1 to 4 wks", hKey: "weeks"},
-  {name: "Experience Design", workflows: "Journey mapping, research synthesis, service blueprinting, design systems, usability work", deliverable: "Journey map; service blueprint; wireframe flow", horizon: "1 to 3 wks", hKey: "weeks"}
+  {
+    name: "Finance & Accounting",
+    focus: "AP, books, cash discipline",
+    workflows: "Invoice processing, payment routing, policy conflicts, reconciliation across email and sheets",
+    tools: "Email, spreadsheets, accounting exports, policy docs",
+    judgment: "Correct amounts, rejected bad invoices, policy conflicts, who to pay and when"
+  },
+  {
+    name: "Operations",
+    focus: "Day-to-day running of the business",
+    workflows: "Inventory and reorder decisions, supplier outreach, team notes, opening/closing routines",
+    tools: "POS exports, Sheets, email/portals, Slack or text",
+    judgment: "Quantities, weekend prep, 86’d items, what to communicate to the team"
+  },
+  {
+    name: "Sales & Business Development",
+    focus: "Pipeline and customer commitments",
+    workflows: "Follow-ups from CRM and inbox, quote adjustments, handoffs to ops or finance",
+    tools: "CRM, email, spreadsheets, shared docs",
+    judgment: "Priority accounts, conflicting promises, accurate next steps and records"
+  },
+  {
+    name: "Human Resources",
+    focus: "People ops for small teams",
+    workflows: "Scheduling notes, onboarding checklists, policy questions, time-off and coverage",
+    tools: "Email, chat, shared sheets/docs, policy files",
+    judgment: "Fair application of policy, what not to promise, clean records"
+  },
+  {
+    name: "Retail & Hospitality",
+    focus: "Front-line SMB operators",
+    workflows: "Morning ops: sales review, reviews, inventory, supplier orders, team updates (e.g. café)",
+    tools: "POS, online ordering, Sheets, email, Slack/text",
+    judgment: "Trends, reorder timing, guest feedback, promos and stockouts"
+  },
+  {
+    name: "Customer Support",
+    focus: "Tickets that touch money and reputation",
+    workflows: "Escalations from inbox and chat, refunds or credits, updates to CRM and team",
+    tools: "Email, chat, CRM, order/ledger sheets",
+    judgment: "When to refund, policy exceptions, tone and accurate status updates"
+  }
 ];
 
 const team = [

@@ -1,51 +1,47 @@
 function renderDomains(filtered = domains) {
   const grid = document.getElementById('domain-grid');
+  if (!grid) return;
   grid.innerHTML = '';
   filtered.forEach(d => {
     const el = document.createElement('div');
     el.className = 'domain-card';
     el.innerHTML = `
       <div class="name">${d.name}<span class="arrow">›</span></div>
-      <div class="horizon">${d.horizon}</div>
+      <div class="horizon">${d.focus || ''}</div>
       <div class="details">
-        <div><strong>Horizon:</strong> ${d.horizon}</div>
-        <div style="margin-top: var(--space-xs);"><strong>Representative workflows:</strong><br>${d.workflows}</div>
-        <div style="margin-top: var(--space-xs);"><strong>Sample deliverable:</strong><br>${d.deliverable}</div>
+        <div><strong>Representative workflows:</strong><br>${d.workflows}</div>
+        <div style="margin-top: var(--space-xs);"><strong>Typical tools:</strong><br>${d.tools}</div>
+        <div style="margin-top: var(--space-xs);"><strong>Judgment we test:</strong><br>${d.judgment}</div>
       </div>
     `;
     el.onclick = () => {
       const wasExpanded = el.classList.contains('expanded');
-      // collapse ALL cards first - make collapse instant for layout
       document.querySelectorAll('.domain-card').forEach(c => {
         if (c.classList.contains('expanded')) {
           c.classList.remove('expanded');
           const det = c.querySelector('.details');
-          if (det) det.style.maxHeight = '0';  // force instant collapse for grid row shrink
+          if (det) det.style.maxHeight = '0';
         }
       });
       const gridEl = document.getElementById('domain-grid');
       if (gridEl) {
-        // hard reset of grid forces browser to re-measure all item heights and recompute row sizes
         gridEl.style.display = 'none';
         gridEl.offsetHeight;
         gridEl.style.display = 'grid';
         gridEl.offsetHeight;
       }
-      // lock all collapsed cards to their now-small intrinsic size (helps grid rows shrink reliably)
       document.querySelectorAll('.domain-card:not(.expanded)').forEach(c => {
-        // force layout on this card to get the correct small scrollHeight
         c.offsetHeight;
         c.style.height = c.scrollHeight + 'px';
       });
-      if (gridEl) gridEl.offsetHeight;  // extra force
+      if (gridEl) gridEl.offsetHeight;
       if (!wasExpanded) {
-        // expand after layout settled; let CSS handle the max-height transition
         requestAnimationFrame(() => {
           if (gridEl) gridEl.offsetHeight;
-          el.style.height = '';  // release height lock so it can grow
+          el.style.height = '';
           el.classList.add('expanded');
           const det = el.querySelector('.details');
-          if (det) det.style.maxHeight = '';  // clear inline so CSS transition applies
+          if (det) det.style.maxHeight = '';
         });
       }
     };
@@ -55,6 +51,7 @@ function renderDomains(filtered = domains) {
 
 function renderRoster(filtered = team) {
   const grid = document.getElementById('roster-grid');
+  if (!grid) return;
   grid.innerHTML = '';
   filtered.forEach(p => {
     if (!p.name) return;
